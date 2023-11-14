@@ -7,7 +7,7 @@ export const HeroSection = () => (
       <p className="text-base text-center font-semibold leading-[174%] md:font-normal md:text-left md:text-xl md:leading-[164%]">
         THE FUTURE OF STARTUPS IN AFRICA IS HERE!!
       </p>
-      <p className="text-moundUpBlack text-lg leading-[173.4%] font-black md:text-moundUpGreen md:text-4xl text-center md:text-left">
+      <p className="text-moundUpBlack mt-2 text-lg leading-[173.4%] font-black md:text-moundUpGreen md:text-4xl text-center md:text-left">
         {`A fully integrated approach to startup funding`.toUpperCase()}
       </p>
       <p className="pt-8 md:pt-10 pb-4 tracking-tight md:tracking-normal">
