@@ -4,7 +4,7 @@ import { Header__2 } from "../headers/headers";
 export const AboutSection = ()=> {
     return (
       <Container pad>
-        <section>
+        <section className="w-[89%] mx-auto lg:w-full">
           <hgroup>
             <Header__2>Our Vision & Mission</Header__2>
             <p

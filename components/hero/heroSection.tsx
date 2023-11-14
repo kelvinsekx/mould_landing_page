@@ -10,7 +10,7 @@ export const HeroSection = () => (
       <p className="text-moundUpBlack text-lg leading-[173.4%] font-black md:text-moundUpGreen md:text-4xl text-center md:text-left">
         {`A fully integrated approach to startup funding`.toUpperCase()}
       </p>
-      <p className="pt-8 md:pt-10 pb-4">
+      <p className="pt-8 md:pt-10 pb-4 tracking-tight md:tracking-normal">
         Moundup creates a space where startups/MSMEs can seamlessly raise
         capital from members of the public and investors on their own terms,
         while regular people can invest in thriving StartUps which they may not
