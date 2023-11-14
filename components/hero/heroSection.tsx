@@ -2,12 +2,12 @@ import Image from "next/image";
 import { Container } from "../container";
 
 export const HeroSection = () => (
-  <div className="flex font-normal bg-moundUpGreen__light max-w-[100rem] mx-auto ">
-    <section className="w-full lg:w-1/2 text-xl py-32 lg:pl-30">
+  <div className="flex flex-col md:flex-row font-normal bg-moundUpGreen__light max-w-[100rem] mx-auto ">
+    <section className="self-center  w-[90%] lg:w-1/2 text-xl py-32 lg:pl-30">
       <p className="text-base text-center font-semibold leading-[174%] md:font-normal md:text-left md:text-xl md:leading-[164%]">
         THE FUTURE OF STARTUPS IN AFRICA IS HERE!!
       </p>
-      <p className="text-moundUpGreen font-black text-lg md:text-4xl leading-[173.4%] text-center md:text-left">
+      <p className="text-moundUpBlack text-lg leading-[173.4%] font-black md:text-moundUpGreen md:text-4xl text-center md:text-left">
         {`A fully integrated approach to startup funding`.toUpperCase()}
       </p>
       <p className="pt-8 md:pt-10 pb-4">
