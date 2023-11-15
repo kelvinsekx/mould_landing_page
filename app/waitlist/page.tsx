@@ -1,7 +1,7 @@
 'use client'
-
+import * as React from "react";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { Container } from "@/components/creators/creators_container";
-import React from "react";
 
 export default function WailtList() {
   return (
@@ -42,24 +42,38 @@ const FormHeader = () => {
 };
 WailtList.Header = FormHeader
 
-const Form = () => {
-  const submitForm = (e: React.FormEvent<HTMLFormElement>)=> {
+const Form = () => { 
+  const [error, setError] = React.useState(false)
+  const [success, setSuccess] = React.useState(false)
+
+  const supabase = createClientComponentClient();
+  const submitForm = async (e: React.FormEvent<HTMLFormElement>)=> {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
+    setError(false)
+    setSuccess(false)
 
     const data: {
-      whatYouWannaInvest?: string | File;
-      phoneNumber?: string | File;
-      fullName?: string | File;
-      email?: string | File;
+      how_much?: null | FormDataEntryValue;
+      phone_number?: null | FormDataEntryValue;
+      full_name?: null | FormDataEntryValue;
+      email?: null | FormDataEntryValue;
     } = {};
-    data["whatYouWannaInvest"] = form.get("whatYouWannaInvest") || '';
-    data["phoneNumber"] = form.get("phoneNumber") || '';
-    data["fullName"] = form.get("fullName") || '';
-    data["email"] = form.get("email") || '';
+    data["how_much"] = form.get("how_much") || null;
+    data["phone_number"] = form.get("phone_number") || null;
+    data["full_name"] = form.get("full_name") || null;
+    data["email"] = form.get("email") || null;
 
 
-    console.log(data)
+    const result = await supabase.from('waitlist').insert({...data})
+
+    if(result.error){
+      setError(true)
+    }else{
+      setSuccess(true)
+      form.set("full_name", '')
+    }
+    console.log(result)
   }
   return (
     <div className=" bg-moundUpBrown py-10">
@@ -70,16 +84,18 @@ const Form = () => {
         <header className="text-center font-extrabold text-lg">
           Join our Mailing List!
         </header>
-        <InputField labelText="Full name" name="fullName" />
+        <InputField labelText="Full name" name="full_name" />
         <InputField labelText="Email" name="email" />
-        <InputField labelText="Phone number" name="phoneNumber" />
+        <InputField labelText="Phone number" name="phone_number" />
         <InputField
           labelText="How much are you willing to invest? "
-          name="whatYouWannaInvest"
+          name="how_much"
         />
         <button className="bg-moundUpGreen__light text-moundUpGreen h-[48px] rounded font-semibold mt-4">
           Submit
         </button>
+        {error && <p className="bg-red-600 text-moundUpWhite p-2">There was an error reaching the server...</p>}
+        {success && <p className="bg-green-600 text-moundUpWhite p-2">Thanks, your form is successfully collected...</p>}
       </form>
     </div>
   );
@@ -93,7 +109,7 @@ const InputField: React.FC<
     <div>
       <label className="text-moundUpWhite">{labelText}</label>
       <div className="h-[48px] mt-2">
-        <input type="text" className="w-full rounded-[3px] h-full" name={name} />
+        <input type="text" className="w-full rounded-[3px] h-full text-moundUpBlack" name={name} />
       </div>
     </div>
   );
