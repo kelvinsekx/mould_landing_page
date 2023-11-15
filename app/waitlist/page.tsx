@@ -34,7 +34,7 @@ const FormHeader = () => {
         JOIN THE WAITLIST
       </h1>
       <p className="text-lg font-normal text-moundUpBlack">
-        Please fill out the form below, and we'll send you an invitation as soon as we are fully launched!
+       {` Please fill out the form below, and we'll send you an invitation as soon as we are fully launched!`}
       </p>
 
     </hgroup>
