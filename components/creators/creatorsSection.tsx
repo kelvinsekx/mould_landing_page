@@ -5,8 +5,12 @@ import { QuestionList } from "../list/list";
 
 export const CreatorsSection = () => {
   return (
-    <Container pad bg className="md:flex-row-reverse">
-      <section className="flex flex-col w-full md:w-1/2">
+    <Container
+      pad
+      bg
+      className="grid md:grid-cols-[1fr,1fr]"
+    >
+      <section className="md:order-2">
         <Header__2 className="text-left">Creators (Founders)</Header__2>
         <article className="mt-7 py-6 font-light">
           <p>Just two questions here, and they are:</p>
@@ -40,7 +44,7 @@ export const CreatorsSection = () => {
           </a>
         </article>
       </section>
-      <ImageContainer src={"/Project-Stages.png"} />
+      <ImageContainer className="md:order-1" src={"/Project-Stages.png"} />
     </Container>
   );
 };

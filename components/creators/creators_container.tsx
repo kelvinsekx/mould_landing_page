@@ -22,8 +22,10 @@ export const Container: React.FC<
   </Main>
 );
 
-export const ImageContainer = ({src}: {src: string}) => (
-  <div className="h-[582px] w-full md:w-1/2 relative">
+export const ImageContainer: React.FC<
+  React.ComponentPropsWithoutRef<"div"> & { src: string }
+> = ({ src, className }) => (
+  <div className={twMerge("min-h-[344px] relative", className)}>
     <Image src={src} alt="" fill className="object-contain" />
   </div>
 );

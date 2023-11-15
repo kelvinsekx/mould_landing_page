@@ -4,8 +4,8 @@ import { Header__2 } from "../headers/headers";
 
 export const InvestorsSection = () => {
   return (
-    <Container pad>
-      <section className="flex flex-col w-full md:w-1/2">
+    <Container pad className="grid md:grid-cols-[1fr,1fr]">
+      <section className="">
         <Header__2 className="text-left">Angels (Investors)</Header__2>
         <article className="mt-7 py-6 font-light">
           <ul className="py-5">
