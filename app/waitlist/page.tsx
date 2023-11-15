@@ -15,7 +15,7 @@ export default function WailtList() {
         width="429"
         viewBox="0 0 429 1112"
         fill="none"
-        className="flex grow absolute top-0 -z-10"
+        className="hidden md:flex grow absolute top-0 -z-10"
       >
         <path
           d="M-721.692 667C-721.692 980.974 -464.255 1235.5 -146.692 1235.5C170.872 1235.5 428.308 980.974 428.308 667C428.308 353.026 -108.128 0 -425.692 0C-743.255 0 -721.692 353.026 -721.692 667Z"
