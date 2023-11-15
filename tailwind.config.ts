@@ -12,6 +12,7 @@ const config: Config = {
         moundUpWhite: "#FFFDFA",
         moundUpBlack: "#0F0800",
         moundUpGreen: "#006A4E",
+        moundUpBrown: '#7E7E7E',
         moundUpGreen__light: "#E0EBE8",
       },
       backgroundImage: {
