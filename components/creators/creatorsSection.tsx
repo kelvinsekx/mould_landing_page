@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container, ImageContainer } from "./creators_container";
 import { Header__2 } from "../headers/headers";
+import { QuestionList } from "../list/list";
 
 export const CreatorsSection = () => {
   return (
@@ -9,9 +10,13 @@ export const CreatorsSection = () => {
         <Header__2 className="text-left">Creators (Founders)</Header__2>
         <article className="mt-7 py-6 font-light">
           <p>Just two questions here, and they are:</p>
-          <ul className="font-semibold text-xl py-5">
-            <li>Do you have a product?</li>
-            <li>Do you need Funding?</li>
+          <ul className="py-5">
+            <QuestionList className="md:text-lg">
+              Do you have a product?
+            </QuestionList>
+            <QuestionList className="md:text-lg">
+              Do you need Funding?
+            </QuestionList>
           </ul>
           <p>
             If you answered YES to both, congratulations! We’re your{" "}
@@ -30,7 +35,9 @@ export const CreatorsSection = () => {
             relationship where you, as a Creator can engage with people who like
             your product and want to see you go to the next level,
           </p>
-          <a href="/" className="font-extrabold">CLICK ON THIS LINK TO GET MORE INFORMATION!!!</a>
+          <a href="/" className="font-extrabold">
+            CLICK ON THIS LINK TO GET MORE INFORMATION!!!
+          </a>
         </article>
       </section>
       <ImageContainer src={"/Project-Stages.png"} />

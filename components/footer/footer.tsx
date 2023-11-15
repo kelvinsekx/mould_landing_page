@@ -27,10 +27,10 @@ const Footer = () => {
           <section>
             <header className="font-extrabold">Community</header>
             <ul>
-              <li className="flex gap-1">
+              <li className="flex gap-1 items-center">
                 <svg
-                  width="25"
-                  height="25"
+                  width="1rem"
+                  height="1rem"
                   viewBox="0 0 25 25"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -42,10 +42,10 @@ const Footer = () => {
                 </svg>
                 <span>Telegram</span>
               </li>
-              <li className="flex gap-1">
+              <li className="flex gap-1 items-center">
                 <svg
-                  width="25"
-                  height="25"
+                  width="1rem"
+                  height="1rem"
                   viewBox="0 0 25 25"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -97,8 +97,8 @@ Footer.UL = UL;
 const InlineIcons = () => (
   <span className="flex justify-center gap-2">
     <svg
-      width="30"
-      height="30"
+      width="1.3rem"
+      height="1.3rem"
       viewBox="0 0 30 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -110,8 +110,8 @@ const InlineIcons = () => (
     </svg>
 
     <svg
-      width="30"
-      height="30"
+      width="1.3rem"
+      height="1.3rem"
       viewBox="0 0 30 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -126,8 +126,8 @@ const InlineIcons = () => (
     </svg>
 
     <svg
-      width="30"
-      height="30"
+      width="1.3rem"
+      height="1.3rem"
       viewBox="0 0 30 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -142,8 +142,8 @@ const InlineIcons = () => (
     </svg>
 
     <svg
-      width="30"
-      height="30"
+      width="1.3rem"
+      height="1.3rem"
       viewBox="0 0 30 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -157,8 +157,8 @@ const InlineIcons = () => (
       </g>
     </svg>
     <svg
-      width="30"
-      height="30"
+      width="1.3rem"
+      height="1.3rem"
       viewBox="0 0 30 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
