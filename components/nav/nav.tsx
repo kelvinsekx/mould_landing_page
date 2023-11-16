@@ -9,12 +9,17 @@ const navList = ["Home", "About", "Creators", "Angels"];
 function Nav() {
   return (
     <Container>
-      <nav className="flex flex-col md:flex-row items-center justify-between py-1">
+      <nav className="flex flex-col md:flex-row items-center justify-between py-[2px]">
         <Nav.MoundUpLogo />
         <ul className="flex flex-col md:flex-row gap-2">
           {navList.map((item, index) => (
             <li key={index}>
-              <Link href={item.toLowerCase()} className="block px-4 py-1 font-semibold">{item}</Link>
+              <Link
+                href={item.toLowerCase()}
+                className="block px-5 py-2 font-semibold hover:shadow-[inset_100px_0_0_0_#E0EBE8] hover:text-moundUpGreen shadow-[inset_0_0_0_0_#E0EBE8] transition-shadow ease-in-out rounded-sm"
+              >
+                {item}
+              </Link>
             </li>
           ))}
         </ul>
