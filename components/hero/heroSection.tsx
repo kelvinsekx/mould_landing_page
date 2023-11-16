@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container } from "../container";
+import {WaitListButton} from '../button/button'
 
 export const HeroSection = () => (
   <div className="flex flex-col md:flex-row font-normal bg-moundUpGreen__light max-w-[100rem] mx-auto ">
@@ -20,6 +21,9 @@ export const HeroSection = () => (
         <b className="block">The best part?</b> These will be done on their own
         terms.
       </strong>
+      <p className="mt-6 md:mt-8">
+        <WaitListButton />
+      </p>
     </section>
     <div className="relative h-[38rem] w-1/2 hidden lg:block self-end">
       <Image

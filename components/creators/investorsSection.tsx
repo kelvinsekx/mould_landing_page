@@ -1,6 +1,7 @@
 import { QuestionList, CheckList } from "../list/list";
 import { Container, ImageContainer } from "./creators_container";
 import { Header__2 } from "../headers/headers";
+import { WaitListButton } from "../button/button";
 
 export const InvestorsSection = () => {
   return (
@@ -37,6 +38,9 @@ export const InvestorsSection = () => {
             </CheckList>
           </ul>
         </article>
+        <p className="mt-8">
+          <WaitListButton />
+        </p>
       </section>
       <ImageContainer src={"/amico.png"} />
     </Container>
