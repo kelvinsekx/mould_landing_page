@@ -49,13 +49,13 @@ function Nav() {
         </div>
         <ul
           className={twMerge(
-            clsx("hidden md:flex flex-col md:flex-row gap-2 ", {
+            clsx("hidden md:flex flex-col md:flex-row gap-2 max-md:w-full", {
               ["flex"]: openNav,
             })
           )}
         >
           {navList.map((item, index) => (
-            <li key={index}>
+            <li key={index} className="max-md:w-full max-md:text-center">
               <Link
                 href={item.toLowerCase()}
                 className="block max-md:w-full md:px-5 md:py-2 font-semibold hover:shadow-[inset_100px_0_0_0_#E0EBE8] hover:text-moundUpGreen shadow-[inset_0_0_0_0_#E0EBE8] transition-shadow ease-in-out rounded-sm"
