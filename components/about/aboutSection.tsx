@@ -35,7 +35,12 @@ export const AboutSection = () => {
            lg:gap-8"
         >
           {cardInfo.map((info, index) => (
-            <AboutSection.Card key={index} h={index+1} s={info[0]} e={info[1]} />
+            <AboutSection.Card
+              key={index}
+              h={String(index + 1)}
+              s={info[0]}
+              e={info[1]}
+            />
           ))}
         </div>
       </section>
