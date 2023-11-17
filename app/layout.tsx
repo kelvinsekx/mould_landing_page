@@ -8,7 +8,7 @@ import Footer from "./../components/footer/footer"
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Mould Up 🎃',
+  title: 'Mound Up 🎃',
   description: 'Sekx work in progress...',
 }
 
