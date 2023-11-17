@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { Container } from "../container";
-import {WaitListButton} from '../button/button'
+import { WaitListButton } from "../button/button";
 
 export const HeroSection = () => (
   <div className="flex flex-col md:flex-row font-normal bg-moundUpGreen__light max-w-[100rem] mx-auto ">

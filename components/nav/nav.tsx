@@ -8,13 +8,15 @@ import { Container } from "../container";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
 
+import styles from "./nav.module.css";
+
 const navList = ["Home", "About", "Creators", "Angels"];
 
 function Nav() {
   const [openNav, setOpenNav] = React.useState(false)
   return (
     <Container>
-      <nav className="flex flex-col md:flex-row items-center justify-between py-[2px]">
+      <nav className={styles.nav}>
         <div className="flex items-center justify-between w-full md:w-fit">
           <Nav.MoundUpLogo />
           <div className="block md:hidden" onClick={() => setOpenNav((prev) => !prev)}>
@@ -49,13 +51,14 @@ function Nav() {
         </div>
         <ul
           className={twMerge(
-            clsx("hidden md:flex flex-col md:flex-row gap-2 max-md:w-full", {
-              ["flex"]: openNav,
+            styles.scale0,
+            clsx(" md:flex flex-col md:flex-row gap-2 max-md:w-full", {
+              ["flex " + styles.scale1]: openNav,
             })
           )}
         >
           {navList.map((item, index) => (
-            <li key={index} className="max-md:w-full max-md:text-center">
+            <li key={index} className="max-md:w-full max-md:border-b max-md:text-center">
               <Link
                 href={item.toLowerCase()}
                 className="block max-md:w-full md:px-5 md:py-2 font-semibold hover:shadow-[inset_100px_0_0_0_#E0EBE8] hover:text-moundUpGreen shadow-[inset_0_0_0_0_#E0EBE8] transition-shadow ease-in-out rounded-sm"
