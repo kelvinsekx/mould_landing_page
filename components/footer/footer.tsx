@@ -1,15 +1,17 @@
 import * as React from "react";
 import { Container } from "../container";
+import Link from "next/link";
+import styles from "./footer.module.css"
 
 const data = [
   {
     title: "Company",
-    items: ["FAQs", "Contact us"],
+    items: ["Contact us"],
   },
-  {
-    title: "Legal",
-    items: ["Terms of Service", "Privacy policy"],
-  },
+  // {
+  //   title: "Legal",
+  //   items: ["Terms of Service", "Privacy policy"],
+  // },
   {
     title: "Links",
     items: ["Home", "About us", "Creators", "Angels"],
@@ -18,51 +20,60 @@ const data = [
 
 const Footer = () => {
   return (
-    <footer className="bg-moundUpBlack text-moundUpWhite">
+    <footer className={"bg-moundUpBlack text-moundUpWhite "+ styles.footer}>
       <Container>
-        <div className="grid gap-10 grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr_1fr] text-base py-10 px-4">
+        <div className="grid gap-10 grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr] text-base py-10 px-4">
           {data.map((menu, index) => (
             <Footer.UL key={index} {...menu} />
           ))}
           <section>
             <header className="font-extrabold">Community</header>
             <ul>
-              <li className="flex gap-1 items-center">
-                <svg
-                  width="1rem"
-                  height="1rem"
-                  viewBox="0 0 25 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              <li>
+                <a
+                  className="flex gap-1 items-center"
+                  href="https://t.me/+7s2RjGFlLeRiMzY0 "
                 >
-                  <path
-                    d="M23.374 4.81448L20.0732 20.3809C19.8242 21.4795 19.1748 21.753 18.2519 21.2354L13.2227 17.5293L10.7959 19.8633C10.5273 20.1319 10.3027 20.3565 9.78515 20.3565L10.1465 15.2344L19.4678 6.81155C19.873 6.45022 19.3799 6.25003 18.8379 6.61136L7.31445 13.8672L2.35351 12.3145C1.27441 11.9776 1.25488 11.2354 2.57812 10.7178L21.9824 3.24222C22.8809 2.9053 23.667 3.44241 23.374 4.81448Z"
-                    fill="#FFFDFA"
-                  />
-                </svg>
-                <span>Telegram</span>
+                  <svg
+                    width="1rem"
+                    height="1rem"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.374 4.81448L20.0732 20.3809C19.8242 21.4795 19.1748 21.753 18.2519 21.2354L13.2227 17.5293L10.7959 19.8633C10.5273 20.1319 10.3027 20.3565 9.78515 20.3565L10.1465 15.2344L19.4678 6.81155C19.873 6.45022 19.3799 6.25003 18.8379 6.61136L7.31445 13.8672L2.35351 12.3145C1.27441 11.9776 1.25488 11.2354 2.57812 10.7178L21.9824 3.24222C22.8809 2.9053 23.667 3.44241 23.374 4.81448Z"
+                      fill="#FFFDFA"
+                    />
+                  </svg>
+                  <span>Telegram</span>
+                </a>
               </li>
-              <li className="flex gap-1 items-center">
-                <svg
-                  width="1rem"
-                  height="1rem"
-                  viewBox="0 0 25 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              <li>
+                <a
+                  href="https://chat.whatsapp.com/JRLJZuByl6cD2RmYGny41R"
+                  className="flex gap-1 items-center"
                 >
-                  <path
-                    d="M16.075 11.875C16.075 12.6375 15.5125 13.2625 14.8 13.2625C14.1 13.2625 13.525 12.6375 13.525 11.875C13.525 11.1125 14.0875 10.4875 14.8 10.4875C15.5125 10.4875 16.075 11.1125 16.075 11.875ZM10.2375 10.4875C9.525 10.4875 8.9625 11.1125 8.9625 11.875C8.9625 12.6375 9.5375 13.2625 10.2375 13.2625C10.95 13.2625 11.5125 12.6375 11.5125 11.875C11.525 11.1125 10.95 10.4875 10.2375 10.4875ZM23.4375 2.575V25C20.2884 22.2171 21.2955 23.1383 17.6375 19.7375L18.3 22.05H4.125C2.7125 22.05 1.5625 20.9 1.5625 19.475V2.575C1.5625 1.15 2.7125 0 4.125 0H20.875C22.2875 0 23.4375 1.15 23.4375 2.575ZM19.875 14.425C19.875 10.4 18.075 7.1375 18.075 7.1375C16.275 5.7875 14.5625 5.825 14.5625 5.825L14.3875 6.025C16.5125 6.675 17.5 7.6125 17.5 7.6125C14.5307 5.98511 11.0428 5.98481 8.1625 7.25C7.7 7.4625 7.425 7.6125 7.425 7.6125C7.425 7.6125 8.4625 6.625 10.7125 5.975L10.5875 5.825C10.5875 5.825 8.875 5.7875 7.075 7.1375C7.075 7.1375 5.275 10.4 5.275 14.425C5.275 14.425 6.325 16.2375 9.0875 16.325C9.0875 16.325 9.55 15.7625 9.925 15.2875C8.3375 14.8125 7.7375 13.8125 7.7375 13.8125C7.92139 13.9412 8.22461 14.1081 8.25 14.125C10.3599 15.3065 13.3568 15.6937 16.05 14.5625C16.4875 14.4 16.975 14.1625 17.4875 13.825C17.4875 13.825 16.8625 14.85 15.225 15.3125C15.6 15.7875 16.05 16.325 16.05 16.325C18.8125 16.2375 19.875 14.425 19.875 14.425Z"
-                    fill="#FFFDFA"
-                  />
-                </svg>
-
-                <span>Discord</span>
+                  <svg
+                    x="0px"
+                    y="0px"
+                    width="1rem"
+                    height="1rem"
+                    viewBox="0 0 50 50"
+                  >
+                    <path
+                      d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z"
+                      fill="#FFFDFA"
+                    ></path>
+                  </svg>
+                  <span>WhatsApp</span>
+                </a>
               </li>
             </ul>
           </section>
         </div>
-        <div className="text-center pt-10 pb-2">
-          <InlineIcons />
+        <div className="text-center py-10">
+          {/* <InlineIcons /> */}
           <p className="pt-[18px]">
             2021 MoundUp Africa inc. All rights reserved
           </p>
@@ -72,19 +83,32 @@ const Footer = () => {
   );
 };
 
-const UL = ({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[] | React.ReactNode[];
-}) => {
+const UL = ({ title, items }: { title: string; items: string[] }) => {
   return (
     <section>
       <header className="font-extrabold">{title}</header>
       <ul>
         {items.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li key={index}>
+            {title === "Company" && item === "Contact us" ? (
+              <a href="mailto:info@moundup.africa">{item}</a>
+            ) : (
+              <Link
+                href={(function () {
+                  const i = item.toLowerCase();
+                  if (i === "creators" || i === "angels") {
+                    return "/waitlist";
+                  } else if (i === "about us") {
+                    return "#about";
+                  } else {
+                    return "/";
+                  }
+                })()}
+              >
+                {item}
+              </Link>
+            )}
+          </li>
         ))}
       </ul>
     </section>
@@ -92,7 +116,6 @@ const UL = ({
 };
 
 Footer.UL = UL;
-
 
 const InlineIcons = () => (
   <span className="flex justify-center gap-2">
@@ -141,13 +164,7 @@ const InlineIcons = () => (
       </g>
     </svg>
 
-    <svg
-      width="1.3rem"
-      height="1.3rem"
-      viewBox="0 0 30 30"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="1.3rem" height="1.3rem" viewBox="0 0 30 30" fill="none">
       <g id="linkedin-in">
         <path
           id="Vector"
