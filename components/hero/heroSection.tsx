@@ -3,7 +3,7 @@ import { WaitListButton } from "../button/button";
 
 export const HeroSection = () => (
   <div className="flex flex-col md:flex-row font-normal bg-moundUpGreen__light max-w-[100rem] mx-auto ">
-    <section className="self-center  w-[90%] lg:w-1/2 text-xl py-32 lg:pl-30">
+    <section className="self-center  w-[90%] lg:w-1/2 text-xl py-30 lg:pl-30">
       <p className="text-base text-center font-semibold leading-[174%] md:font-normal md:text-left md:text-xl md:leading-[164%]">
         THE FUTURE OF STARTUPS IN AFRICA IS HERE!!
       </p>
@@ -24,7 +24,7 @@ export const HeroSection = () => (
         <WaitListButton />
       </p>
     </section>
-    <div className="relative h-[38rem] w-1/2 hidden lg:block self-end">
+    <div className="relative h-[40rem] w-1/2 hidden lg:block self-end">
       <Image
         src={"/vector-painted-rocket.png"}
         alt=""

@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + " text-moundUpBlack text-base"}>
+      <body className={inter.className + " bg-moundUpWhite text-moundUpBlack text-base"}>
         <Nav />
           {children}
           <Footer/>

@@ -2,6 +2,7 @@
 
 import * as React from "react";
 
+
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "../container";
@@ -15,7 +16,7 @@ const navList = ["Home", "About", "Creators", "Angels"];
 function Nav() {
   const [openNav, setOpenNav] = React.useState(false);
   return (
-    <Container>
+    <Container className="sticky top-0 z-20 bg-moundUpWhite">
       <nav className={styles.nav}>
         <div className="flex items-center justify-between w-full md:w-fit">
           <Nav.MoundUpLogo />
@@ -66,6 +67,7 @@ function Nav() {
               className="max-md:w-full max-md:border-b max-md:text-center"
             >
               <Link
+              
                 href={(function () {
                   const i = item.toLowerCase();
                   if (i === "home") {
