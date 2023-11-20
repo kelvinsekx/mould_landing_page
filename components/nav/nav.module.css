@@ -10,17 +10,21 @@
   }
 
   .nav ul {
-    position: absolute;
-    top: 5rem;
+    /* position: absolute;
+    top: 5rem; */
     background: white;
+    transform-origin: top;
   }
 
   .scale0 {
-    transform: scale(0);
+    transform: scaleY(0);
     transition: all 200ms ease-in-out 50ms;
+    max-height: 0px;
   }
 
   .scale1 {
-    transform: scale(1);
+    transform: scaleY(1);
+    transition: all 200ms ease-in 50ms;
+    max-height: 12rem;
   }
 }

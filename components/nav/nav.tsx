@@ -55,7 +55,7 @@ function Nav() {
         <ul
           className={twMerge(
             styles.scale0,
-            clsx(" md:flex flex-col md:flex-row gap-2 max-md:w-full", {
+            clsx(" md:flex flex-col md:flex-row gap-2 max-md:w-full z-10", {
               ["flex " + styles.scale1]: openNav,
             })
           )}
