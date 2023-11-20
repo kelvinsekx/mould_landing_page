@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
 import * as React from "react";
 
-import Image from 'next/image'
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "../container";
 import { twMerge } from "tailwind-merge";
@@ -13,13 +13,16 @@ import styles from "./nav.module.css";
 const navList = ["Home", "About", "Creators", "Angels"];
 
 function Nav() {
-  const [openNav, setOpenNav] = React.useState(false)
+  const [openNav, setOpenNav] = React.useState(false);
   return (
     <Container>
       <nav className={styles.nav}>
         <div className="flex items-center justify-between w-full md:w-fit">
           <Nav.MoundUpLogo />
-          <div className="block md:hidden" onClick={() => setOpenNav((prev) => !prev)}>
+          <div
+            className="block md:hidden"
+            onClick={() => setOpenNav((prev) => !prev)}
+          >
             {!openNav ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,9 +61,17 @@ function Nav() {
           )}
         >
           {navList.map((item, index) => (
-            <li key={index} className="max-md:w-full max-md:border-b max-md:text-center">
+            <li
+              key={index}
+              className="max-md:w-full max-md:border-b max-md:text-center"
+            >
               <Link
-                href={item.toLowerCase()}
+                href={(function () {
+                  const i = item.toLowerCase();
+                  if (i === "home") {
+                    return "/";
+                  } else return "#" + item.toLowerCase();
+                })()}
                 className="block max-md:w-full md:px-5 md:py-2 font-semibold hover:shadow-[inset_100px_0_0_0_#E0EBE8] hover:text-moundUpGreen shadow-[inset_0_0_0_0_#E0EBE8] transition-shadow ease-in-out rounded-sm"
               >
                 {item}
@@ -75,7 +86,12 @@ function Nav() {
 
 const MoundUpLogo = () => (
   <div id="logo" className="h-20 w-32 relative">
-    <Image src={"/MoundUP-Africa-Logo.png"} alt="MoundUP-Africa-Logo" className="object-fit object-contain" fill />
+    <Image
+      src={"/MoundUP-Africa-Logo.png"}
+      alt="MoundUP-Africa-Logo"
+      className="object-fit object-contain"
+      fill
+    />
   </div>
 );
 Nav.MoundUpLogo = MoundUpLogo;

@@ -29,7 +29,7 @@ export default function WailtList() {
 
 const FormHeader = () => {
   return (
-    <hgroup className="text-right relative md:top-20">
+    <hgroup className="text-right md:relative md:top-20">
       <h1 className="text-moundUpGreen leading-[173.4%] text-2xl md:text-3xl lg:text-5xl font-black">
         JOIN THE WAITLIST
       </h1>
