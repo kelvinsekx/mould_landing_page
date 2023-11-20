@@ -3,6 +3,8 @@ import * as React from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { Container } from "@/components/creators/creators_container";
 
+import { useForm } from "react-hook-form";
+
 export default function WailtList() {
   return (
     <main className="text-moundUpWhite">
@@ -44,35 +46,16 @@ WailtList.Header = FormHeader;
 const Form = () => {
   const [error, setError] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
-  const [radio, setRadio] = React.useState<"investor" | "fundraiser">(
-    "investor"
-  );
+
+  const { register, handleSubmit, watch } = useForm();
+  const selectedOption = watch("user_type");
 
   const supabase = createClientComponentClient();
-  const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = new FormData(e.currentTarget);
+  const submitForm = async (d: {}) => {
     setError(false);
     setSuccess(false);
 
-    const data: {
-      how_much?: null | FormDataEntryValue;
-      phone_number?: null | FormDataEntryValue;
-      full_name?: null | FormDataEntryValue;
-      email?: null | FormDataEntryValue;
-      user_type?: null | FormDataEntryValue;
-      company_name?: null | FormDataEntryValue;
-    } = {};
-    data["how_much"] = form.get("how_much") || null;
-    data["phone_number"] = form.get("phone_number") || null;
-    data["full_name"] = form.get("full_name") || null;
-    data["email"] = form.get("email") || null;
-    data["user_type"] = form.get("radio") || null;
-    data["company_name"] = form.get("company_name") || null;
-
-    console.log(data);
-
-    const result = await supabase.from("waitlist").insert({ ...data });
+    const result = await supabase.from("waitlist").insert({ ...d });
 
     if (result.error) {
       setError(true);
@@ -84,27 +67,55 @@ const Form = () => {
   return (
     <div className=" bg-moundUpBrown py-10">
       <form
-        onSubmit={submitForm}
+        onSubmit={handleSubmit(submitForm)}
         className="w-[80%] mx-auto flex gap-6 flex-col"
       >
         <header className="text-center font-extrabold text-lg">
           Join our Mailing List!
         </header>
-        <InputField labelText="Full name" name="full_name" />
-        <InputField labelText="Email" name="email" />
-        <InputField labelText="Phone number" name="phone_number" />
-        <p>
+        <div className="FULL_NAME">
+          <label className="text-moundUpWhite">Full name</label>
+          <div className="h-[48px] mt-2">
+            <input
+              type="text"
+              className="w-full rounded-[3px] h-full text-moundUpBlack"
+              {...register("full_name", { required: true })}
+            />
+          </div>
+        </div>
+
+        <div className="EMAIL">
+          <label className="text-moundUpWhite">Email</label>
+          <div className="h-[48px] mt-2">
+            <input
+              type="email"
+              className="w-full rounded-[3px] h-full text-moundUpBlack"
+              {...register("email", { required: true })}
+            />
+          </div>
+        </div>
+
+        <div className="PHONE_NO">
+          <label className="text-moundUpWhite">Phone number</label>
+          <div className="h-[48px] mt-2">
+            <input
+              type="text"
+              className="w-full rounded-[3px] h-full text-moundUpBlack"
+              {...register("phone_number", {required: true})}
+            />
+          </div>
+        </div>
+
+        <div>
           What best describes you?
           <div className="flex gap-3  mt-2">
             <div className="flex items-center mr-4 mb-4">
               <input
                 id="radio1"
                 type="radio"
-                name="radio"
+                {...register("user_type")}
                 className="hidden"
                 value={"Investor"}
-                onChange={() => setRadio("investor")}
-                checked={radio == "investor"}
               />
               <label
                 htmlFor="radio1"
@@ -118,11 +129,9 @@ const Form = () => {
               <input
                 id="radio2"
                 type="radio"
-                name="radio"
+                {...register("user_type")}
                 className="hidden"
                 value={"Fundraiser"}
-                onChange={() => setRadio("fundraiser")}
-                checked={radio == "fundraiser"}
               />
               <label
                 htmlFor="radio2"
@@ -133,14 +142,31 @@ const Form = () => {
               </label>
             </div>
           </div>
-        </p>
-        {radio === "fundraiser" ? (
-          <InputField labelText="Name of your company" name="company_name" />
+        </div>
+        {selectedOption === "Fundraiser" ? (
+          <div className="NAME_OF_COMPANY">
+            <label className="text-moundUpWhite">Name of your company</label>
+            <div className="h-[48px] mt-2">
+              <input
+                type="text"
+                className="w-full rounded-[3px] h-full text-moundUpBlack"
+                {...register("company_name")}
+              />
+            </div>
+          </div>
         ) : (
-          <InputField
-            labelText="How much are you willing to invest? "
-            name="how_much"
-          />
+          <div className="HOW_MUCH">
+            <label className="text-moundUpWhite">
+              How much are you willing to invest?
+            </label>
+            <div className="h-[48px] mt-2">
+              <input
+                type="text"
+                className="w-full rounded-[3px] h-full text-moundUpBlack"
+                {...register("how_much")}
+              />
+            </div>
+          </div>
         )}
         <button className="bg-moundUpGreen__light text-moundUpGreen h-[48px] rounded font-semibold mt-4">
           Submit
