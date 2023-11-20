@@ -5,7 +5,7 @@ import { WaitListButton } from "../button/button";
 
 export const InvestorsSection = () => {
   return (
-    <Container pad className="grid md:grid-cols-[1fr,1fr]">
+    <Container pad className="grid md:grid-cols-[1fr,1fr]" id="angels">
       <section className="">
         <Header__2 className="text-left">Angels (Investors)</Header__2>
         <article className="mt-7 py-6 font-light">

@@ -1,5 +1,5 @@
 import * as React from "react";
-import Image from 'next/image'
+import Image from "next/image";
 
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -8,9 +8,10 @@ import { Container as Main } from "../container";
 
 export const Container: React.FC<
   React.ComponentPropsWithoutRef<"div"> & { bg?: boolean; pad?: boolean }
-> = ({ children, bg, pad, className = ""}) => (
+> = ({ children, bg, pad, className = "", id }) => (
   <Main
     pad={pad}
+    id={id}
     className={twMerge(
       clsx("flex flex-col md:flex-row align-center bg-moundUpWhite", {
         "bg-moundUpGreen__light": bg,
