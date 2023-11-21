@@ -2,7 +2,6 @@
 
 import * as React from "react";
 
-
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "../container";
@@ -56,7 +55,7 @@ function Nav() {
         <ul
           className={twMerge(
             styles.scale0,
-            clsx(" md:flex flex-col md:flex-row gap-2 max-md:w-full z-10", {
+            clsx(" md:flex flex-col md:flex-row gap-2 max-md:w-full z-30", {
               ["flex " + styles.scale1]: openNav,
             })
           )}
@@ -67,7 +66,6 @@ function Nav() {
               className="max-md:w-full max-md:border-b max-md:text-center"
             >
               <Link
-              
                 href={(function () {
                   const i = item.toLowerCase();
                   if (i === "home") {
@@ -87,14 +85,14 @@ function Nav() {
 }
 
 const MoundUpLogo = () => (
-  <div id="logo" className="h-20 w-32 relative">
+  <Link href="/" id="logo" className="h-20 w-32 relative">
     <Image
       src={"/MoundUP-Africa-Logo.png"}
       alt="MoundUP-Africa-Logo"
       className="object-fit object-contain"
       fill
     />
-  </div>
+  </Link>
 );
 Nav.MoundUpLogo = MoundUpLogo;
 

@@ -20,7 +20,7 @@ const data = [
 
 const Footer = () => {
   return (
-    <footer className={"bg-moundUpBlack text-moundUpWhite "+ styles.footer}>
+    <footer className={"bg-moundUpBlack text-moundUpWhite " + styles.footer}>
       <Container>
         <div className="grid gap-10 grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr] text-base py-10 px-4">
           {data.map((menu, index) => (
@@ -33,6 +33,8 @@ const Footer = () => {
                 <a
                   className="flex gap-1 items-center"
                   href="https://t.me/+7s2RjGFlLeRiMzY0 "
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <svg
                     width="1rem"
@@ -53,6 +55,8 @@ const Footer = () => {
                 <a
                   href="https://chat.whatsapp.com/JRLJZuByl6cD2RmYGny41R"
                   className="flex gap-1 items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <svg
                     x="0px"
