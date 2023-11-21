@@ -15,7 +15,7 @@ const navList = ["Home", "About", "Creators", "Angels"];
 function Nav() {
   const [openNav, setOpenNav] = React.useState(false);
   return (
-    <Container className="sticky top-0 z-20 bg-moundUpWhite">
+    <Container className="sticky top-0 z-50 bg-moundUpWhite">
       <nav className={styles.nav}>
         <div className="flex items-center justify-between w-full md:w-fit">
           <Nav.MoundUpLogo />

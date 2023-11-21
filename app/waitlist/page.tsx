@@ -16,11 +16,11 @@ export default function WailtList() {
         <WailtList.Header />
         <WailtList.Form />
         <svg
-          width="50vw"
+          width="120vw"
           height="1112"
           viewBox="0 0 500 1412"
           fill="none"
-          className="max-md:hidden absolute top-10 -z-1"
+          className="max-md:hidden absolute top-10"
         >
           <path
             d="M-721.692 667C-721.692 980.974 -464.255 1235.5 -146.692 1235.5C170.872 1235.5 428.308 980.974 428.308 667C428.308 353.026 -108.128 0 -425.692 0C-743.255 0 -721.692 353.026 -721.692 667Z"
@@ -33,7 +33,7 @@ export default function WailtList() {
           height="536"
           viewBox="0 0 513 536"
           fill="none"
-          className="max-md:hidden absolute -top-[60px] -right-[148px] -rotate-[15deg] -z-5"
+          className="max-md:hidden absolute -top-[60px] -right-[20rem] -rotate-[15deg]"
         >
           <path
             d="M661.413 123.106C661.413 295.913 513.351 436 330.707 436C148.062 436 0 295.913 0 123.106C0 -49.6999 308.527 -244 491.171 -244C673.815 -244 661.413 -49.6999 661.413 123.106Z"
@@ -82,10 +82,10 @@ const Form = () => {
     console.log(result);
   };
   return (
-    <div className=" bg-moundUpBrown py-10">
+    <div className=" bg-moundUpBrown py-10 z-20">
       <form
         onSubmit={handleSubmit(submitForm)}
-        className="w-[80%] mx-auto flex gap-6 flex-col z-20"
+        className="w-[80%] mx-auto flex gap-6 flex-col"
       >
         <header className="text-center font-extrabold text-lg">
           Join our Mailing List!
@@ -172,18 +172,7 @@ const Form = () => {
             </div>
           </div>
         ) : (
-          <div className="HOW_MUCH">
-            <label className="text-moundUpWhite">
-              How much are you willing to invest?
-            </label>
-            <div className="h-[48px] mt-2">
-              <input
-                type="text"
-                className="w-full rounded-[3px] h-full text-moundUpBlack"
-                {...register("how_much")}
-              />
-            </div>
-          </div>
+          <div />
         )}
         <button className="bg-moundUpGreen__light text-moundUpGreen h-[48px] rounded font-semibold mt-4">
           Submit
