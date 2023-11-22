@@ -29,7 +29,7 @@ export const HeroSection = () => (
         src={"/vector-painted-rocket.png"}
         alt=""
         fill
-        className="object-fit object-cover"
+        className="object-cover object-left-top"
       />
     </div>
   </div>
