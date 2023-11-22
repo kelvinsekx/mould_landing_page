@@ -77,7 +77,7 @@ const Footer = () => {
           </section>
         </div>
         <div className="text-center py-10">
-          {/* <InlineIcons /> */}
+          <InlineIcons />
           <p className="pt-[18px]">
             2021 MoundUp Africa inc. All rights reserved
           </p>
@@ -123,6 +123,8 @@ Footer.UL = UL;
 
 const InlineIcons = () => (
   <span className="flex justify-center gap-2">
+    <a href="https://web.facebook.com/people/MoundUp-Africa/100075793212356/"  target="_blank"
+                  rel="noopener noreferrer">
     <svg
       width="1.3rem"
       height="1.3rem"
@@ -135,8 +137,9 @@ const InlineIcons = () => (
         fill="#FFFDFA"
       />
     </svg>
+    </a>
 
-    <svg
+    {/* <svg
       width="1.3rem"
       height="1.3rem"
       viewBox="0 0 30 30"
@@ -150,9 +153,10 @@ const InlineIcons = () => (
           fill="#FFFDFA"
         />
       </g>
-    </svg>
+    </svg> */}
 
-    <svg
+    <a href="mailto:info@moundup.africa" target="_blank"
+                  rel="noopener noreferrer"><svg
       width="1.3rem"
       height="1.3rem"
       viewBox="0 0 30 30"
@@ -166,8 +170,10 @@ const InlineIcons = () => (
           fill="#FFFDFA"
         />
       </g>
-    </svg>
+    </svg></a>
 
+<a href="https://www.linkedin.com/company/moundup-africa"  target="_blank"
+                  rel="noopener noreferrer">
     <svg width="1.3rem" height="1.3rem" viewBox="0 0 30 30" fill="none">
       <g id="linkedin-in">
         <path
@@ -177,6 +183,10 @@ const InlineIcons = () => (
         />
       </g>
     </svg>
+    </a>
+
+    <a href="https://twitter.com/MoundUp_Africa"  target="_blank"
+                  rel="noopener noreferrer">
     <svg
       width="1.3rem"
       height="1.3rem"
@@ -192,6 +202,7 @@ const InlineIcons = () => (
         />
       </g>
     </svg>
+    </a>
   </span>
 );
 
