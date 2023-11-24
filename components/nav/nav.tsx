@@ -26,8 +26,7 @@ function Nav() {
             {!openNav ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
+                className="w-5 h-5"
                 viewBox="0 0 22 22"
                 fill="none"
               >
@@ -39,8 +38,7 @@ function Nav() {
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="23"
+                className="w-[25px] h-[25px]"
                 viewBox="0 0 25 23"
                 fill="none"
               >
@@ -55,7 +53,7 @@ function Nav() {
         <ul
           className={twMerge(
             styles.scale0,
-            clsx(" md:flex flex-col md:flex-row gap-2 max-md:w-full z-30", {
+            clsx(" md:flex flex-col md:flex-row md:gap-2 max-md:w-full z-30", {
               ["flex " + styles.scale1]: openNav,
             })
           )}
@@ -63,7 +61,7 @@ function Nav() {
           {navList.map((item, index) => (
             <li
               key={index}
-              className="max-md:w-full max-md:border-b max-md:text-center"
+              className="max-md:w-full max-md:border-t max-md:text-center"
             >
               <Link
                 href={(function () {
@@ -72,7 +70,7 @@ function Nav() {
                     return "/";
                   } else return "#" + item.toLowerCase();
                 })()}
-                className="block max-md:w-full md:px-5 md:py-2 font-semibold hover:shadow-[inset_100px_0_0_0_#E0EBE8] hover:text-moundUpGreen shadow-[inset_0_0_0_0_#E0EBE8] transition-shadow ease-in-out rounded-sm"
+                className="block max-md:w-full md:px-5 py-2 font-semibold hover:shadow-[inset_100px_0_0_0_#E0EBE8] hover:text-moundUpGreen shadow-[inset_0_0_0_0_#E0EBE8] transition-shadow ease-in-out rounded-sm"
               >
                 {item}
               </Link>
@@ -85,7 +83,7 @@ function Nav() {
 }
 
 const MoundUpLogo = () => (
-  <Link href="/" id="logo" className="h-20 w-32 relative">
+  <Link href="/" id="logo" className="h-12 md:h-20 w-[90px] md:w-32 relative">
     <Image
       src={"/MoundUP-Africa-Logo.png"}
       alt="MoundUP-Africa-Logo"
