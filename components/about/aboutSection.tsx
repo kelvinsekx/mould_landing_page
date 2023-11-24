@@ -26,7 +26,7 @@ export const AboutSection = () => {
             id="description"
             className="md:text-xl leading-[164.4%] text-center mt-4"
           >
-            Making an investor out of every African.
+            Making an investor out of every African
           </p>
         </hgroup>
         <div
