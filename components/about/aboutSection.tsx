@@ -50,7 +50,7 @@ export const AboutSection = () => {
 const Card = ({ h, s, e }: { h: string; s: string; e: string }) => {
   return (
     <article className="flex flex-col bg-moundUpGreen__light rounded p-8 md:p-6  shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] gap-1">
-      <header className="rounded-full bg-moundUpWhite border border-slate-200 w-12 h-12 flex items-center justify-center font-black self-center text-[28px] mb-[48px]">
+      <header className="rounded-full bg-moundUpWhite border border-slate-200 w-12 h-12 flex items-center justify-center font-black self-center text-[28px] mb-6 md:mb-12">
         {h}
       </header>
       <p className="font-semibold text-center md:text-left">{s}.</p>
