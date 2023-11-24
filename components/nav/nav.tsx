@@ -51,6 +51,7 @@ function Nav() {
           </div>
         </div>
         <ul
+         onClick={() => setOpenNav((prev) => !prev)}
           className={twMerge(
             styles.scale0,
             clsx(" md:flex flex-col md:flex-row md:gap-2 max-md:w-full z-30", {
@@ -70,7 +71,7 @@ function Nav() {
                     return "/";
                   } else return "#" + item.toLowerCase();
                 })()}
-                className="block max-md:w-full md:px-5 py-2 font-semibold hover:shadow-[inset_100px_0_0_0_#E0EBE8] hover:text-moundUpGreen shadow-[inset_0_0_0_0_#E0EBE8] transition-shadow ease-in-out rounded-sm"
+                className="block max-md:w-full md:px-5 py-2 font-semibold hover:md:shadow-[inset_100px_0_0_0_#E0EBE8] hover:text-moundUpGreen shadow-[inset_0_0_0_0_#E0EBE8] transition-shadow ease-in-out rounded-sm"
               >
                 {item}
               </Link>
