@@ -30,7 +30,7 @@ export const AboutSection = () => {
           </p>
         </hgroup>
         <div
-          className="grid md:grid-cols-[1fr_1fr_1fr] mt-[72px] justify-center align-center gap-2 md:gap-4 
+          className="grid md:grid-cols-[1fr_1fr_1fr] mt-6 md:mt-[72px] justify-center align-center gap-2 md:gap-4 
            lg:gap-8"
         >
           {cardInfo.map((info, index) => (
