@@ -24,7 +24,7 @@ export const AboutSection = () => {
           <Header__2>Our Vision & Mission</Header__2>
           <p
             id="description"
-            className="text-xl leading-[164.4%] text-center mt-4"
+            className="md:text-xl leading-[164.4%] text-center mt-4"
           >
             Making an investor out of every African.
           </p>
